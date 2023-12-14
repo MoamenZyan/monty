@@ -72,7 +72,7 @@ void mul(stack_t **head, int value)
 
 	if (stack_len(*head) < 1)
 	{
-		fprintf(stderr, "L%d: can't sub, stack too short\n", value);
+		fprintf(stderr, "L%d: can't mul, stack too short\n", value);
 		exit(EXIT_FAILURE);
 	}
 	while (current->next != NULL)
