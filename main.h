@@ -53,7 +53,13 @@ void swap(stack_t **head, int value);
 
 void add(stack_t **head, int value);
 
-void nop(stack_t **head, int value);
+void nop(stack_t **head, int n);
+
+void sub(stack_t **head, int value);
+
+void _div(stack_t **head, int value);
+
+void mul(stack_t **head, int value);
 
 void execute_opcode(char *str, stack_t **head, int line_number);
 

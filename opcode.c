@@ -19,6 +19,9 @@ void execute_opcode(char *str, stack_t **head, int line_number)
 	{"swap", swap},
 	{"add", add},
 	{"nop", nop},
+	{"sub", sub},
+	{"div", _div},
+	{"mul", mul},
 	{NULL, NULL}
 };
 	opcode = strtok(str, " ");
@@ -75,11 +78,11 @@ void add(stack_t **head, int value)
 /**
  * nop - function that does nothing :)
  * @head: head of the stack
- * @value: line number of the text
+ * @n: line number of the text
  * Return: void
 */
 
-void nop(__attribute__((unused)) stack_t **head, __attribute__((unused)) int value)
+void nop(__attribute__((unused)) stack_t **head, __attribute__((unused)) int n)
 {
 }
 
@@ -111,7 +114,7 @@ char *trim_spaces(const char *input)
 {
 	size_t start, end, trimmed_len;
 	char *trimmed_str;
-	
+
 	if (input == NULL)
 		return (NULL);
 
