@@ -81,3 +81,34 @@ void mul(stack_t **head, int value)
 	current->prev->next = NULL;
 	current->prev->n = temp;
 }
+
+/**
+ * mod - modulus last two element of the stack
+ * @head: head of the stack
+ * @value: line number of the text
+ * Return: void
+*/
+
+void mod(stack_t **head, int value)
+{
+	int temp;
+	stack_t *current = *head;
+
+	if (stack_len(*head) < 1)
+	{
+		fprintf(stderr, "L%d: can't mod, stack too short\n", value);
+		exit(EXIT_FAILURE);
+	}
+
+	while (current->next != NULL)
+		current = current->next;
+
+	if (current->n == 0)
+	{
+		fprintf(stderr, "L%d: division by zero\n", value);
+		exit(EXIT_FAILURE);
+	}
+	temp = current->prev->n / current->n;
+	current->prev->next = NULL;
+	current->prev->n = temp;
+}

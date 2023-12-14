@@ -61,6 +61,8 @@ void _div(stack_t **head, int value);
 
 void mul(stack_t **head, int value);
 
+void mod(stack_t **head, int value);
+
 void execute_opcode(char *str, stack_t **head, int line_number);
 
 char *trim_spaces(const char *input);

@@ -22,6 +22,7 @@ void execute_opcode(char *str, stack_t **head, int line_number)
 	{"sub", sub},
 	{"div", _div},
 	{"mul", mul},
+	{"mod", mod},
 	{NULL, NULL}
 };
 	opcode = strtok(str, " ");
